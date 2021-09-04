@@ -10,8 +10,6 @@ export default function App() {
 	const [enteredGoal, setEnteredGoal] = useState('');
 	const [courseGoals, setCourseGoals] = useState([]);
 
-	const [isAddMode, setIsAddMode] = useState(false);
-
 	const goalInputHandler = (textInput)=>{
 		setEnteredGoal(textInput);
 	};
@@ -23,37 +21,30 @@ export default function App() {
 			]
 		);
 		setEnteredGoal('');
-		setIsAddMode(false);
 
-		console.log(`Tarea Registrada ✔️ !!`);
+		console.log(`salida es: ${courseGoals.toString()}`);
 		// ---------
 	};
 
 	const removeGoalHandler = (goalId) =>{
 		setCourseGoals(
-			courseGoals => {
+			courseGoals => { 
 				return courseGoals.filter(goal => goal.id !== goalId );
 			}
 		);
 	}
 
-	const cancelGoalModal = () =>{
-		setIsAddMode(false);
+	const onPressLearnMore = () =>{
+		setText('Yeah it is');
 	}
 
 	return (
 		<View style={styles1.screen}>
-			<Button 
-				title="Add new Goal"
-				onPress={() => setIsAddMode(true)}
-			/>
 			<Text style={{textAlign:'center'}}>{text}</Text>
 			<GoalInput
-				visible={isAddMode}
 				goalInputHandler={goalInputHandler}
 				enteredGoal={enteredGoal}
 				addGoalHandler={addGoalHandler}
-				onCancel={cancelGoalModal}
 			/>
 
 			<FlatList
@@ -68,7 +59,44 @@ export default function App() {
 					/>
 				)}
 			/>
- 
+
+			<ScrollView style={styles1.inputContainer}>
+
+				<View
+						style={{
+							width: '30%',
+							height:100,
+							padding:50,
+							backgroundColor:'red',
+							justifyContent:'center',
+							alignItems:'center'
+						}}
+					>
+						<Text>1sas</Text>
+				</View>
+				<View
+						style={{ width: '30%', height:100, padding:50, backgroundColor:'blue'}}
+					>
+						<Text>2</Text>
+				</View>
+				<View
+						style={{ width: '30%', height:100, padding:50, backgroundColor:'green'}}
+					>
+						<Text>3</Text>
+				</View>
+				<View
+						style={{
+							width: '30%',
+							height:100,
+							padding:50,
+							backgroundColor:'black',
+							justifyContent:'center',
+							alignItems:'center'
+						}}
+					>
+						<Text>4</Text>
+				</View>
+			 </ScrollView>
 		</View>
 	);
 }

@@ -1,0 +1,31 @@
+
+Primeros pasos con React Native - Expo
+
+https://expo.dev/
+
+#una vez
+> npm install --global expo-cli
+
+
+#Crear proyecto
+>expo init rn-first-app
+
+#Escoger la opcion -> Blank
+
+#una vez instalado, entrar al proyecto desde >CD ... y ejecutar
+>npm start
+
+------------ Cambiar a Tunnel y no Lan, funcionó para mi 
+Problemas con el emulador AVD de android studio
+
+https://stackoverflow.com/questions/43002144/cant-load-expo-app-something-went-wrong
+
+Abrir el puerto 19000, run desde windows >WF.msc
+https://stackoverflow.com/questions/43593042/network-response-time-out-error-create-react-native-app-expo
+
+------------ si me funcionó por el ipad , cambiar a Tunnel y luego escanear el codigo QR
+Para usar dispositovo Ipad u tablet u phone,
+
+------------
+
+https://reactnative.dev/docs/components-and-apis
